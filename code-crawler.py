@@ -124,10 +124,7 @@ def get_code_info(url):
 
 if __name__ == "__main__":
     url = ""
-     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
-    }
-    html = requests.get(url, headers = headers)
+    html = requests.get(url)
     html.encoding = 'utf-8'
     bs = BeautifulSoup(html.text, "html.parser")
     all_pages = bs.find_all('a', string=re.compile(r"\d{4}\. .*"))
