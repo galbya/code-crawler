@@ -126,7 +126,7 @@ if __name__ == "__main__":
     url = ""
     html = requests.get(url)
     html.encoding = 'utf-8'
-    bs = BeautifulSoup(html.text, "html.parser")
+    bs = BeautifulSoup(html.text, "lxml.parser")
     all_pages = bs.find_all('a', string=re.compile(r"\d{4}\. .*"))
     all_pages = [ap.get('href') for ap in all_pages]
 
